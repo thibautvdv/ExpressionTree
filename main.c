@@ -14,13 +14,15 @@ int main(){
     int counter = -1;
 
     do{
-       equation[++counter] = getchar();
+        equation[++counter] = getchar();
     } while (equation[counter] != '\n' && counter < 256);
 
     // Binaire boom maken aan de hand van input
     node* tree = create_tree(equation);
-    
+
     printf("%.2f\n", evaluate_tree(tree));
+
+    free_node(tree);
 
     getchar();
 

@@ -189,6 +189,14 @@ float evaluate_tree(node *tree_node){
         return 0;
 }
 
+void free_node(node *tree_node){
+    if(tree_node->left != NULL)
+        free_node(tree_node->left);
+    if(tree_node->right != NULL)
+        free_node(tree_node->right);
+    free(tree_node);
+}
+
 // Deze functie zet alle waarden in een char array op 0
 void reset_buffer(char *buffer, int size){
     for(int i = 0; i < size; i++){

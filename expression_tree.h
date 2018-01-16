@@ -18,5 +18,7 @@ void reset_buffer(char *buffer, int size);
 
 float evaluate_tree(node* tree_node);
 
+void free_node(node* tree_node);
+
 
 #endif // EXPRESSION_TREE_H
